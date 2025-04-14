@@ -3,6 +3,8 @@ import './Home.css'
 import axios from 'axios'
 import toast,{Toaster} from 'react-hot-toast'
 import FilmCard from '../../Component/FilmsCard/FilmCard.js'
+import AddImage from '../../assects/image-gallery.png'
+import { Link } from 'react-router-dom'
 // import AddImage from '../../assects/image.png'
 function Home() {
  const [Films ,SetFilms]=useState([]);
@@ -22,7 +24,7 @@ function Home() {
           LoadFilms();
     },[])
   return (
-    <div>
+    <div className='mainhome-conatiner'>
                     Home
         {
             Films.map((film ,index)=>{
@@ -40,6 +42,8 @@ function Home() {
             })
         }
               <Toaster/>
+              <Link to='/add-film' > <img className='addimage-icon' src={AddImage}/>  </Link>
+              
             
     </div>
   )
