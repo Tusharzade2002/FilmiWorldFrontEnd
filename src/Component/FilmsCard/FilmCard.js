@@ -2,6 +2,7 @@ import React from "react";
 import "./FilmsCard.css";
 import axios from "axios";
 import starIcon from "../../assects/star.png" 
+import { useNavigate } from "react-router-dom";
 function FilmCard({
   _id,
   title,
@@ -13,12 +14,11 @@ function FilmCard({
   rating,
   Language,
 }) {
+  const navigate = useNavigate();
   const deleteFilm = async() => { 
  const response = await axios.delete(`http://localhost:5006/films/${_id}`);
    console.log(`Film with ID ${_id} deleted successfully`);
-    window.location.reload();
-   
-     
+    window.location.reload();    
   };
   return (
     <div className="border border-black m-4 rounded-lg h-40 flex relative gap-2">
@@ -44,7 +44,7 @@ function FilmCard({
          <div>Short Description :{shortDescription}</div>
  <div className="absolute bottom-2 right-2">
   <button className="bg-red-500 text-white px-2 py-1 rounded" onClick={()=>deleteFilm()}>Delete</button>
-  <button className="bg-blue-500 text-white px-2 py-1 rounded ms-2">Edit</button>
+  <button className="bg-blue-500 text-white px-2 py-1 rounded ms-2" onClick={()=>{navigate(`/films/edit/${_id}`)}}>Edit</button>
  </div>
       </div>
     </div>
