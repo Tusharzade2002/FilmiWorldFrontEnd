@@ -16,7 +16,7 @@ function FilmCard({
 }) {
   const navigate = useNavigate();
   const deleteFilm = async() => { 
- const response = await axios.delete(`http://localhost:5006/films/${_id}`);
+ const response = await axios.delete(`https://filmi-world-backend-1.onrender.com/films/${_id}`);
    console.log(`Film with ID ${_id} deleted successfully`);
     window.location.reload();    
   };

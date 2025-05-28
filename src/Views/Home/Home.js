@@ -10,7 +10,7 @@ function Home() {
   const [Films, SetFilms] = useState([]);
   const LoadFilms = async () => {
     try {
-      const response = await axios.get(`http://localhost:5006/films`);
+      const response = await axios.get(`https://filmi-world-backend-1.onrender.com/films`);
       SetFilms(response?.data?.data);
       console.log(response.data.data);
 

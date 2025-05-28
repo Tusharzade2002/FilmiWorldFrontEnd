@@ -18,7 +18,7 @@ function Addfilms() {
   const addfilm = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5006/films", {
+      const response = await axios.post(`https://filmi-world-backend-1.onrender.com/films`, {
         title: film.title,
         director: film.director,
         shortDescription: film.shortDescription,

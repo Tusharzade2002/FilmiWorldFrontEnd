@@ -19,7 +19,7 @@ function Editfilms() {
 
 
        const fetchFilm = async () => {
-           const response = await axios.get(`http://localhost:5006/films/${id}`);
+           const response = await axios.get(`https://filmi-world-backend-1.onrender.com/films/${id}`);
            console.log(response.data);
            setFilm(response.data.data);
        };
