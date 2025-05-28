@@ -29,10 +29,9 @@ function Editfilms() {
 
   return (
     <div>
-        <h1>Edit Film</h1>
-      
-        <div className="relative">
-      <h1 className="text-2xl font-bold text-center mt-7">AddFilms</h1>
+    
+      <div className="relative">
+      <h1 className="text-2xl font-bold text-center mt-7">Update Film</h1>
       <div className="absolute top-0 left-10  ">
         <Link to="/">
           <House size={48} />
